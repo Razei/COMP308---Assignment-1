@@ -8,9 +8,16 @@ module.exports = function (app) {
     //display login page
     res.render("index", { loginMessage: "Please login" });
   });
+
   //the form uses a post request to the same path ('/')
   app.post("/", function (req, res) {
     //use the controller function
     index.displayInfo(req, res);
+  });
+
+
+  app.post("/thankYou", function (req, res) {
+    //use the controller function
+    index.displayThankYou(req, res);
   });
 };

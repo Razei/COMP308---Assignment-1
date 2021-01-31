@@ -4,22 +4,42 @@
   <head>
     <meta charset="utf-8" />
     <title><%= loginMessage %></title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
   </head>
+
   <body>
-    <form method="post">
-      <input
-        type="text"
-        size="30"
-        placeholder="Enter your user name"
-        name="username"
-      /><br />
-      <input
-        type="password"
-        size="30"
-        placeholder="Enter your password"
-        name="password"
-      /><br />
-      <input type="submit" value="Submit" name="submit" />
-    </form>
+    <div style="height: 100vh">
+      <div class="container">
+        <div id="form-container" class="row">
+          <div class="col-5 p-0">
+            <div id="login-image-container" class="overflow-hidden">
+              <img src="/img/login.jpg">
+            </div>
+          </div>
+
+          <div class="col-7 d-flex flex-column">
+            <div class="row my-auto">
+              <form method="post" class="p-5 row">
+                <h2 class="mb-3">Login</h2>
+                <input class="mb-3 col-12"
+                  type="text"
+                  size="30"
+                  placeholder="Enter your user name"
+                  name="username"/><br>
+
+                <input class="mb-3 col-12"
+                  type="password"
+                  size="30"
+                  placeholder="Enter your password"
+                  name="password"/><br>
+
+                <input type="submit" value="Submit" name="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

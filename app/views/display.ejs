@@ -4,9 +4,59 @@
   <head>
     <meta charset="utf-8" />
     <title></title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Complete the rest of the fields</h1>
-    <input type="text" name="username" value="<%= username %>" />
+  <div style="height: 100vh">
+    <div class="container">
+      <div id="form-container" class="row">
+        <div class="col-5 p-0">
+          <div id="login-image-container" class="overflow-hidden">
+            <img src="/img/login.jpg">
+          </div>
+        </div>
+
+        <div class="col-7 d-flex flex-column">
+          <div class="row my-auto">
+            <form method="POST" action="/thankYou" class="p-5 row no-gutters">
+              <h1 class="mb-4">Complete the rest of the fields</h1>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-4">Course Code:</div>
+                  <div class="col-8">
+                    <input class="mb-3 col-12" type="text" name="courseCode"/>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Course Name:</div>
+                  <div class="col-8">
+                    <input class="mb-3 col-12" type="text" name="courseName"/>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Student Email:</div>
+                  <div class="col-8">
+                    <input class="mb-3 col-12" type="text" name="email" value="<%= username %>" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">Your comments:</div>
+                  <div class="col-8">
+                    <textarea class="mb-3 col-12" type="text" name="comments"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <input id="submit" class="col-12" type="submit" value="Submit" name="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>

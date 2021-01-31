@@ -47,6 +47,7 @@ module.exports = function () {
 
     // Configure static file serving
     app.use(express.static('./public'));
+    app.use('/css', express.static('./node_modules/bootstrap/dist/css'));
 
     // Return the Express application instance
     return app;
