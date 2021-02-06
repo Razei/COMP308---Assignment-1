@@ -1,6 +1,8 @@
 module.exports = function (app) {
   //load the controller(s)
-  var index = require("../controllers/index.server.controller");
+  var indexController = require("../controllers/index.server.controller");
+  var displayController = require("../controllers/comments.server.controller");
+  var thankYouController = require("../controllers/thankYou.server.controller");
 
   //handle the routing of get request to the route
   //by showing the login screen
@@ -10,14 +12,7 @@ module.exports = function (app) {
   });
 
   //the form uses a post request to the same path ('/')
-  app.post("/", function (req, res) {
-    //use the controller function
-    index.displayInfo(req, res);
-  });
+  app.post("/", displayController.render);
 
-
-  app.post("/thankYou", function (req, res) {
-    //use the controller function
-    index.displayThankYou(req, res);
-  });
+  app.post("/thankYou", thankYouController.render);
 };
