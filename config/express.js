@@ -12,7 +12,7 @@ module.exports = function () {
     // Create a new Express application instance
     const app = express();
 
-    // Use the 'NDOE_ENV' variable to activate the 'morgan' logger or 'compress' middleware
+    // Use the 'NODE_ENV' variable to activate the 'morgan' logger or 'compress' middleware
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
     } else if (process.env.NODE_ENV === 'production') {

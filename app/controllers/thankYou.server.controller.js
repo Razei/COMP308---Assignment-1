@@ -1,15 +1,14 @@
 exports.render = function (req, res) {
-
     if (req.session.username){
         //get user input using request object
-        var email = req.body.email;
-        var courseCode = req.body.courseCode;
-        var courseName = req.body.courseName;
-        var comments = req.body.comments;
-    
+        const email = req.body.email;
+        const courseCode = req.body.courseCode;
+        const courseName = req.body.courseName;
+        const comments = req.body.comments;
+
         //make a reference to the session object
-        var session = req.session;
-    
+        let session = req.session;
+
         //store the username in session object
         session = Object.assign(session, {email, courseCode, courseName, comments});
         console.log("username in session: " + session.username);
@@ -19,5 +18,4 @@ exports.render = function (req, res) {
     } else {
         res.render("index", { loginMessage: "Please login" });
     }
-
 };
